@@ -1,5 +1,10 @@
+setTimeout(() => {
+  console.clear();
+}, 1000);
+
+// ? Declaring all consts
 const burger = document.getElementById("hamburger");
-const burgerSubHead = document.getElementById("hamburger-sub-header");
+const burgerSubHead = document.getElementById("hamburger-subheader");
 
 const companySubHeading = document.getElementById("company");
 const portfolioSubHeading = document.getElementById("portfolio");
@@ -9,6 +14,25 @@ const companyDropdown = document.getElementById("company-subheader");
 const portfolioDropdown = document.getElementById("portfolio-subheader");
 const newsDropdown = document.getElementById("news-and-events-subheader");
 
+const companyHamburgerSubHeading = document.getElementById(
+  "company-hamburger-subheader"
+);
+const portfolioHamburgerSubHeading = document.getElementById(
+  "portfolio-hamburger-subheader"
+);
+const newsHamburgerSubHeading = document.getElementById(
+  "news-and-events-hamburger-subheader"
+);
+const companyHamburgerSubHeadingChild = document.getElementById(
+  "company-hamburger-subheader-child"
+);
+const portfolioHamburgerSubHeadingChild = document.getElementById(
+  "portfolio-hamburger-subheader-child"
+);
+const newsHamburgerSubHeadingChild = document.getElementById(
+  "news-and-events-hamburger-subheader-child"
+);
+
 const companyActiveDomElems = [companySubHeading, companyDropdown];
 const portfolioActiveDomElems = [portfolioSubHeading, portfolioDropdown];
 const newsActiveDomElems = [newsSubHeading, newsDropdown];
@@ -16,31 +40,33 @@ const newsActiveDomElems = [newsSubHeading, newsDropdown];
 // ? this mutes any front-end effects from happening on load
 setTimeout(() => {
   companyDropdown.classList.remove("onload-mute-effect");
+  portfolioDropdown.classList.remove("onload-mute-effect");
+  newsDropdown.classList.remove("onload-mute-effect");
   burgerSubHead.classList.remove("onload-mute-effect");
 }, 1000);
 
-let clicked = false;
+let hamburgerClicked = true;
 burger.onclick = () => {
-  clicked = clicked ? false : true;
-  if (!clicked) {
+  hamburgerClicked = hamburgerClicked ? false : true;
+  if (!hamburgerClicked) {
     burger.classList.add("active");
     burgerSubHead.classList.add("active");
   }
-  if (clicked) {
+  if (hamburgerClicked) {
     burger.classList.remove("active");
     burgerSubHead.classList.remove("active");
   }
 };
 
-function classAssignerHelper(elems, req) {
+function classAssignerHelper(elem, req) {
   if (req === "add") {
-    elems.forEach((e) => {
+    elem.forEach((e) => {
       e.classList.add("active");
     });
   }
 
   if (req === "remove") {
-    elems.forEach((e) => {
+    elem.forEach((e) => {
       e.classList.remove("active");
     });
   }
@@ -86,4 +112,38 @@ newsDropdown.onmouseover = () => {
 };
 newsDropdown.onmouseleave = () => {
   classAssignerHelper(newsActiveDomElems, "remove");
+};
+
+// ? Company sub-heading onclick controls
+let companySubClicked = true;
+companyHamburgerSubHeading.onclick = () => {
+  companySubClicked = companySubClicked ? false : true;
+  if (!companySubClicked) {
+    companyHamburgerSubHeadingChild.classList.add("active");
+  }
+  if (companySubClicked) {
+    companyHamburgerSubHeadingChild.classList.remove("active");
+  }
+};
+// ? Portfolio sub-heading onclick controls
+portfolioSubClicked = true;
+portfolioHamburgerSubHeading.onclick = () => {
+  portfolioSubClicked = portfolioSubClicked ? false : true;
+  if (!portfolioSubClicked) {
+    portfolioHamburgerSubHeadingChild.classList.add("active");
+  }
+  if (portfolioSubClicked) {
+    portfolioHamburgerSubHeadingChild.classList.remove("active");
+  }
+};
+// ? News and Events sub-heading onclick controls
+let newsSubClicked = true;
+newsHamburgerSubHeading.onclick = () => {
+  newsSubClicked = newsSubClicked ? false : true;
+  if (!newsSubClicked) {
+    newsHamburgerSubHeadingChild.classList.add("active");
+  }
+  if (newsSubClicked) {
+    newsHamburgerSubHeadingChild.classList.remove("active");
+  }
 };

@@ -16,8 +16,8 @@
 }
 
 :root {
-  --colour-1: rgb(183, 238, 210);
-  --colour-2: rgb(45, 157, 124);
+  --color-1: rgb(45, 157, 124);
+  --color-2: rgb(203, 235, 219);
   --grey-border: rgb(216, 216, 216);
   --header-padding-dist-1: 60px;
   --header-padding-dist-2: 160px;
@@ -75,8 +75,8 @@ a {
 }
 
 a:hover {
-  color: var(--colour-2);
-  text-decoration: var(--colour-2) underline solid 2px;
+  color: var(--color-1);
+  text-decoration: var(--color-1) underline solid 2px;
 }
 
 li {
@@ -117,10 +117,10 @@ button {
   padding: 0.4rem 1.6rem;
   border-radius: 50px;
   color: white;
-  background-color: var(--colour-2);
+  background-color: var(--color-1);
   font-weight: 700;
   letter-spacing: 0.1rem;
-  border: var(--colour-2) solid 2px;
+  border: var(--color-1) solid 2px;
 }
 
 #company-subheader.onload-mute-effect,
@@ -128,6 +128,31 @@ button {
 #news-and-events-subheader.onload-mute-effect,
 #hamburger-subheader.onload-mute-effect {
   display: none;
+}
+
+/* ? - - - - - -  */
+/* ? SPAN (WORD EFFECT) STYLES */
+/* ? - - - - - -  */
+
+.word-accent {
+  font-weight: 700;
+  font-style: italic;
+  margin: 0 6px 0 -6px;
+  color: white;
+  position: relative;
+}
+
+.word-accent::after {
+  content: "";
+  width: 110%;
+  height: 55px;
+  transform: skew(-2deg, 6deg);
+  position: absolute;
+  inset: 0;
+  margin-top: 10px;
+  background-color: black;
+  border-radius: 2px;
+  z-index: -10;
 }
 
 /* ? - - - - - -  */
@@ -165,7 +190,7 @@ button {
 .header-items li,
 .sub-header li {
   margin: auto 1rem;
-  color: var(--colour-2);
+  color: var(--color-1);
 }
 
 .header-items button {
@@ -174,7 +199,7 @@ button {
 }
 
 .header-items button:hover {
-  color: var(--colour-2);
+  color: var(--color-1);
   background-color: white;
   cursor: pointer;
 }
@@ -185,6 +210,7 @@ button {
 
 .sub-header {
   margin: auto 0rem;
+  background-color: white;
   padding: 0.2rem var(--header-padding-dist-1) 0.2rem;
   box-shadow: var(--box-shadow-default);
 }
@@ -195,7 +221,7 @@ button {
 }
 
 .sub-header li:hover {
-  color: var(--colour-2);
+  color: var(--color-1);
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
@@ -205,14 +231,14 @@ button {
 /* ? - - - - - -  */
 
 .hover-menu {
-  z-index: 50;
+  z-index: 20;
   position: absolute;
   left: var(--header-padding-dist-1);
   right: var(--header-padding-dist-1);
   height: 300px;
   width: auto;
   background-color: white;
-  border-left: var(--colour-2) solid 5px;
+  border-left: var(--color-1) solid 5px;
   box-shadow: var(--box-shadow-default);
   border-radius: 2px;
   flex-direction: row;
@@ -252,7 +278,7 @@ button {
 }
 
 .item-container {
-  border: var(--colour-1) solid 2px;
+  border: var(--color-2) solid 2px;
   padding: 0.75rem;
 }
 
@@ -262,7 +288,7 @@ button {
 
 #hamburger {
   padding: 0;
-  z-index: 50;
+  z-index: 20;
   display: none;
   position: absolute;
   background: transparent;
@@ -306,11 +332,11 @@ button {
 
 #hamburger-subheader {
   position: absolute;
-  background-color: var(--colour-2);
+  background-color: var(--color-1);
   min-height: 300px;
   min-width: 100vw;
   transition: transform 600ms ease-in-out;
-  z-index: 0;
+  z-index: 10;
   transform: translateY(-800px);
 }
 
@@ -382,6 +408,118 @@ button {
 }
 
 /* ? - - - - - -  */
+/* ?  HERO PAGE STYLES */
+/* ? - - - - - -  */
+
+.homepage-segment {
+  top: 0;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    80% 100%,
+    95% 50%,
+    80% 0,
+    60% 0,
+    75% 50%,
+    60% 100%,
+    0 100%,
+    0 0
+  );
+  z-index: -10;
+}
+
+.homepage-segment h2,
+.homepage-segment h3 {
+  opacity: 0;
+  margin-left: var(--header-padding-dist-1);
+  max-width: 45vw;
+}
+
+.homepage-segment h2 {
+  font-weight: 500;
+  font-size: 3em;
+}
+
+.homepage-segment h3 {
+  font-weight: 100;
+  font-size: 1.5em;
+  font-style: italic;
+  text-decoration: solid 0.75px black underline;
+  text-underline-offset: 2px;
+}
+
+.homepage-segment h2:nth-child(1) {
+  animation: fade-in 1200ms ease-in-out forwards;
+}
+
+.homepage-segment h2:nth-child(2) {
+  animation: fade-in 1200ms ease-in-out 350ms forwards;
+}
+
+.homepage-segment h3 {
+  animation: fade-in 1200ms ease-in-out 700ms forwards;
+}
+
+.site-backdrop-green,
+.site-backdrop-blue {
+  position: fixed;
+  width: 200vw;
+  height: 200vh;
+  background-size: 150%;
+  inset: 0;
+  translate: -50vw 0;
+  margin: auto;
+  z-index: -20;
+}
+
+.site-backdrop-green {
+  background-image: linear-gradient(
+    135deg,
+    hsl(134deg 87% 59%) 0%,
+    hsl(139deg 75% 56%) 10%,
+    hsl(144deg 64% 52%) 20%,
+    hsl(150deg 58% 49%) 29%,
+    hsl(155deg 57% 45%) 37%,
+    hsl(160deg 56% 41%) 44%,
+    hsl(161deg 49% 43%) 51%,
+    hsl(159deg 39% 50%) 58%,
+    hsl(157deg 41% 58%) 67%,
+    hsl(154deg 43% 67%) 76%,
+    hsl(152deg 44% 76%) 88%,
+    hsl(150deg 44% 86%) 100%
+  );
+  animation: rotate-background 3s infinite linear;
+}
+
+.site-backdrop-blue {
+  background-image: linear-gradient(
+    135deg,
+    hsl(177deg 87% 59%) 0%,
+    hsl(174deg 75% 56%) 10%,
+    hsl(171deg 64% 52%) 20%,
+    hsl(168deg 58% 49%) 29%,
+    hsl(165deg 57% 45%) 37%,
+    hsl(162deg 56% 41%) 44%,
+    hsl(164deg 49% 43%) 51%,
+    hsl(170deg 39% 50%) 58%,
+    hsl(177deg 41% 58%) 67%,
+    hsl(184deg 43% 67%) 76%,
+    hsl(190deg 44% 76%) 88%,
+    hsl(197deg 44% 86%) 100%
+  );
+  animation: rotate-background 3s infinite linear,
+    fade-in-out 12s infinite ease-in-out;
+}
+
+/* ? - - - - - -  */
 /* ? MEDIA QUERIES */
 /* ? - - - - - -  */
 
@@ -406,6 +544,13 @@ button {
     transform: translateY(0px);
     transition: transform 600ms ease-in-out;
   }
+
+  .site-backdrop-green,
+  .site-backdrop-blue {
+    width: 250vh;
+    height: 600vw;
+    translate: -125vh 0;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -425,5 +570,41 @@ button {
 
   #hamburger-subheader[class="active"] {
     display: none;
+  }
+
+  .homepage-segment h2,
+  .homepage-segment h3 {
+    margin-left: var(--header-padding-dist-2);
+  }
+}
+
+@keyframes rotate-background {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -17,7 +17,7 @@
 
 :root {
   --color-1: rgb(25, 158, 118);
-  --color-2: rgb(180, 255, 217);
+  --color-2: rgb(128, 224, 221);
   --grey-border: rgb(216, 216, 216);
   --header-padding-dist-1: 60px;
   --header-padding-dist-2: 160px;
@@ -135,6 +135,8 @@ button {
 
 button:hover {
   cursor: pointer;
+  color: var(--color-1);
+  background-color: white;
 }
 
 #company-subheader.onload-mute-effect,
@@ -206,14 +208,9 @@ button:hover {
   color: var(--color-1);
 }
 
-.header-items button {
-  color: white;
-}
-
 .header-items button:hover {
   color: var(--color-1);
   background-color: white;
-  cursor: pointer;
 }
 
 /* ? - - - - - -  */
@@ -424,9 +421,12 @@ button:hover {
 
 .homepage-section,
 .company-section,
-.news-and-events-section {
+.company-section::after,
+.news-and-events-section,
+.news-and-events-section::after,
+.news-and-events-section-background {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
@@ -563,9 +563,25 @@ button:hover {
   justify-content: center;
 }
 
+.company-section::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    white,
+    transparent,
+    transparent,
+    transparent,
+    black
+  );
+  clip-path: polygon(50% 100%, 80% 0, 60% 0, 30% 100%);
+  z-index: -1;
+}
+
 .company-section h2 {
   font-size: 5em;
   font-weight: 600;
+  text-shadow: 1px 1px 1.5px var(--color-1), 1px -1px 1.5px var(--color-1),
+    -1px 1px 1.5px var(--color-1), -1px -1px 1.5px var(--color-1);
 }
 
 .company-section h3 {
@@ -577,7 +593,6 @@ button:hover {
   border-color: white;
   background-color: transparent;
   font-size: 2em;
-  display: block;
   margin-top: 2em;
 }
 
@@ -585,6 +600,124 @@ button:hover {
   background-color: white;
   text-shadow: 1px 1px 1.5px var(--color-1), 1px -1px 1.5px var(--color-1),
     -1px 1px 1.5px var(--color-1), -1px -1px 1.5px var(--color-1);
+}
+
+/* ? - - - - - -  */
+/* ?  NEWS AND EVENTS PAGE STYLES */
+/* ? - - - - - -  */
+
+.news-and-events-section-background {
+  position: absolute;
+  background-color: black;
+  min-height: 100%;
+  text-align: center;
+  clip-path: polygon(
+    18% 100%,
+    0% 100%,
+    0% 0%,
+    30% 0,
+    0 92%,
+    0 100%,
+    100% 100%,
+    100% 0,
+    50% 0
+  );
+}
+
+.news-and-events-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  place-content: space-evenly;
+}
+
+.news-and-events-section::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  min-height: 100%;
+  background: linear-gradient(transparent, black, black, black, black, black);
+  clip-path: polygon(30% 0, 50% 0, 20% 100%, 0% 100%, 0% 90%);
+  z-index: -1;
+}
+
+.news-card,
+.news-card.reverse {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 400px;
+  margin: 5rem;
+  align-items: center;
+}
+
+.news-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-container {
+  background-color: white;
+  width: 325px;
+  height: 100%;
+  padding: 2em;
+  padding-right: 40%;
+  border-radius: 3px;
+}
+
+.news-card.reverse .text-container {
+  padding-right: 2em;
+  padding-left: 40%;
+  text-align: right;
+}
+
+.news-card h2,
+.news-card p,
+.news-card button {
+  margin-top: 2.5rem;
+}
+
+.news-card h2 {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--color-1);
+}
+
+.news-card p {
+  color: black;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.news-card button {
+  font-size: 1.5em;
+}
+
+.news-card button:hover {
+  text-shadow: none;
+}
+
+.image-container {
+  width: 400px;
+  height: 350px;
+  position: absolute;
+  right: 0;
+  border: black solid 4px;
+  box-shadow: 1px 1px 8px var(--color-1), -1px 1px 8px var(--color-1),
+    1px -1px 8px var(--color-1), -1px -1px 8px var(--color-1);
+}
+
+.news-card.reverse .image-container {
+  right: auto;
+  left: 0;
+}
+
+.image-container > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* ? - - - - - -  */

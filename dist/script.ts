@@ -39,22 +39,22 @@ const newsActiveDomElems = [newsSubHeading, newsDropdown];
 
 // ? this mutes any front-end effects from happening on load
 setTimeout(() => {
-  companyDropdown.classList.remove("onload-mute-effect");
-  portfolioDropdown.classList.remove("onload-mute-effect");
-  newsDropdown.classList.remove("onload-mute-effect");
-  burgerSubHead.classList.remove("onload-mute-effect");
+  companyDropdown?.classList.remove("onload-mute-effect");
+  portfolioDropdown?.classList.remove("onload-mute-effect");
+  newsDropdown?.classList.remove("onload-mute-effect");
+  burgerSubHead?.classList.remove("onload-mute-effect");
 }, 1000);
 
 let hamburgerClicked = true;
-burger.onclick = () => {
+burger!.onclick = () => {
   hamburgerClicked = hamburgerClicked ? false : true;
   if (!hamburgerClicked) {
-    burger.classList.add("active");
-    burgerSubHead.classList.add("active");
+    burger?.classList.add("active");
+    burgerSubHead?.classList.add("active");
   }
   if (hamburgerClicked) {
-    burger.classList.remove("active");
-    burgerSubHead.classList.remove("active");
+    burger?.classList.remove("active");
+    burgerSubHead?.classList.remove("active");
   }
 };
 
@@ -73,77 +73,77 @@ function classAssignerHelper(elem, req) {
 }
 
 // ? Company sub-heading hover controls
-companySubHeading.onmouseover = () => {
+companySubHeading!.onmouseover = () => {
   classAssignerHelper(companyActiveDomElems, "add");
 };
-companySubHeading.onmouseleave = () => {
+companySubHeading!.onmouseleave = () => {
   classAssignerHelper(companyActiveDomElems, "remove");
 };
-companyDropdown.onmouseover = () => {
+companyDropdown!.onmouseover = () => {
   classAssignerHelper(companyActiveDomElems, "add");
 };
-companyDropdown.onmouseleave = () => {
+companyDropdown!.onmouseleave = () => {
   classAssignerHelper(companyActiveDomElems, "remove");
 };
 
 // ? Portfolio sub-heading hover controls
-portfolioSubHeading.onmouseover = () => {
+portfolioSubHeading!.onmouseover = () => {
   classAssignerHelper(portfolioActiveDomElems, "add");
 };
-portfolioSubHeading.onmouseleave = () => {
+portfolioSubHeading!.onmouseleave = () => {
   classAssignerHelper(portfolioActiveDomElems, "remove");
 };
-portfolioDropdown.onmouseover = () => {
+portfolioDropdown!.onmouseover = () => {
   classAssignerHelper(portfolioActiveDomElems, "add");
 };
-portfolioDropdown.onmouseleave = () => {
+portfolioDropdown!.onmouseleave = () => {
   classAssignerHelper(portfolioActiveDomElems, "remove");
 };
 
 // ? News and Events sub-heading hover controls
-newsSubHeading.onmouseover = () => {
+newsSubHeading!.onmouseover = () => {
   classAssignerHelper(newsActiveDomElems, "add");
 };
-newsSubHeading.onmouseleave = () => {
+newsSubHeading!.onmouseleave = () => {
   classAssignerHelper(newsActiveDomElems, "remove");
 };
-newsDropdown.onmouseover = () => {
+newsDropdown!.onmouseover = () => {
   classAssignerHelper(newsActiveDomElems, "add");
 };
-newsDropdown.onmouseleave = () => {
+newsDropdown!.onmouseleave = () => {
   classAssignerHelper(newsActiveDomElems, "remove");
 };
 
 // ? Company sub-heading onclick controls
 let companySubClicked = true;
-companyHamburgerSubHeading.onclick = () => {
+companyHamburgerSubHeading!.onclick = () => {
   companySubClicked = companySubClicked ? false : true;
   if (!companySubClicked) {
-    companyHamburgerSubHeadingChild.classList.add("active");
+    companyHamburgerSubHeadingChild?.classList.add("active");
   }
   if (companySubClicked) {
-    companyHamburgerSubHeadingChild.classList.remove("active");
+    companyHamburgerSubHeadingChild?.classList.remove("active");
   }
 };
 // ? Portfolio sub-heading onclick controls
-portfolioSubClicked = true;
-portfolioHamburgerSubHeading.onclick = () => {
+let portfolioSubClicked = true;
+portfolioHamburgerSubHeading!.onclick = () => {
   portfolioSubClicked = portfolioSubClicked ? false : true;
   if (!portfolioSubClicked) {
-    portfolioHamburgerSubHeadingChild.classList.add("active");
+    portfolioHamburgerSubHeadingChild?.classList.add("active");
   }
   if (portfolioSubClicked) {
-    portfolioHamburgerSubHeadingChild.classList.remove("active");
+    portfolioHamburgerSubHeadingChild?.classList.remove("active");
   }
 };
 // ? News and Events sub-heading onclick controls
 let newsSubClicked = true;
-newsHamburgerSubHeading.onclick = () => {
+newsHamburgerSubHeading!.onclick = () => {
   newsSubClicked = newsSubClicked ? false : true;
   if (!newsSubClicked) {
-    newsHamburgerSubHeadingChild.classList.add("active");
+    newsHamburgerSubHeadingChild?.classList.add("active");
   }
   if (newsSubClicked) {
-    newsHamburgerSubHeadingChild.classList.remove("active");
+    newsHamburgerSubHeadingChild?.classList.remove("active");
   }
 };

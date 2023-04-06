@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styla™</title>
+  </head>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <body>
+    <div id="welcome-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal">
+        <div class="tiny-screen-disclaimer">
+          <h2>Welcome!</h2>
+          <p>
+            This website is
+            <span class="red-underlined">non-functional</span>
+            (i.e. User Interface showcase purposes only)
+          </p>
+        </div>
+        <div class="normal-screen-disclaimer">
+          <h2>Welcome to my website!</h2>
+          <p>
+            Just to let you know, this website is a portfolio piece of mine, so
+            it is
+            <span class="red-underlined"> completely non-functional</span> (i.e.
+            the links will not redirect to any other website). Nonentheless, if
+            you have any suggestions, feel free to reach out to my email -
+            danielleemusic98@gmail.com. I hope you enjoy your stay!
+          </p>
+        </div>
+        <button id="welcome-modal__button">I understand</button>
+      </div>
+    </div>
+    <menu>
+      <nav class="header">
+        <h1>Styla</h1>
+        <div class="header-items">
+          <li>Careers</li>
+          <li>Locations</li>
+          <button>Sign up</button>
+        </div>
+        <button id="hamburger" aria-expanded="false">
+          <svg class="hamburger" viewBox="0 0 100 100">
+            <rect
+              class="line top"
+              width="80"
+              height="10"
+              x="10"
+              y="25"
+              rx="5"
+            ></rect>
+            <rect
+              class="line middle"
+              width="80"
+              height="10"
+              x="10"
+              y="45"
+              rx="5"
+            ></rect>
+            <rect
+              class="line bottom"
+              width="80"
+              height="10"
+              x="10"
+              y="65"
+              rx="5"
+            ></rect>
+          </svg>
+        </button>
+      </nav>
+      <nav class="sub-header">
+        <li class="arrowed-item" id="company">Company</li>
+        <li class="arrowed-item" id="portfolio">Portfolio</li>
+        <li>Clients</li>
+        <li class="arrowed-item" id="news-and-events">News and Events</li>
+        <li>Blog</li>
+      </nav>
+      <div id="company-subheader" class="hover-menu onload-mute-effect">
+        <div class="item">
+          <h2>
+            Who we are, and what we stand for. Find out our core values and
+            goals.
+          </h2>
+        </div>
+        <div class="item">
+          <h3><a href="#">Values</a></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore,
+            doloremque!
+          </p>
+          <h3><a href="#">Meet the team</a></h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi,
+            deserunt!
+          </p>
+          <h3><a href="#">What we do</a></h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
+            ipsum.
+          </p>
+        </div>
+        <div class="item colored-boxes">
+          <div class="item-container">
+            <h3>Law of the day: Security</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              fuga obcaecati omnis facilis et magnam!
+            </p>
+          </div>
+          <div class="item-container">
+            <h3>3 revision policy</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              fuga obcaecati omnis facilis et magnam!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="portfolio-subheader" class="hover-menu onload-mute-effect">
+        <div class="item">
+          <h2>A display of our finest work, from our finest designers.</h2>
+        </div>
+        <div class="item">
+          <h3><a href="#">Hawthorn's Offical Website</a></h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi,
+            deserunt!
+          </p>
+          <h3><a href="#">Kyber Corp. Website</a></h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
+            ipsum.
+          </p>
+        </div>
+        <div class="item colored-boxes">
+          <div class="item-container">
+            <h3>Interactive quote maker</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              fuga obcaecati omnis facilis et magnam!
+            </p>
+          </div>
+          <div class="item-container">
+            <h3>Technologies we use</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              fuga obcaecati omnis facilis et magnam!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="news-and-events-subheader" class="hover-menu onload-mute-effect">
+        <div class="item">
+          <h2>
+            Who we are, and what we stand for. Find out our core values and
+            goals.
+          </h2>
+        </div>
+        <div class="item">
+          <h3><a href="#">News</a></h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+          <h3><a href="#">Events</a></h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="item colored-boxes">
+          <div class="item-container">
+            <h3>Quaterly announcements</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              fuga obcaecati omnis facilis et magnam!
+            </p>
+          </div>
+          <div class="item-container">
+            <h3>New client project completion</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              fuga obcaecati omnis facilis et magnam!
+            </p>
+          </div>
+        </div>
+      </div>
+      <ul id="hamburger-subheader" class="onload-mute-effect">
+        <li
+          class="arrowed-item hamburger-item"
+          id="company-hamburger-subheader"
+        >
+          Company
+        </li>
+        <div class="arrowed-item-child" id="company-hamburger-subheader-child">
+          <li><a href="#">Values</a></li>
+          <li><a href="#">Meet the team</a></li>
+          <li><a href="#">What we do</a></li>
+        </div>
+        <li
+          class="arrowed-item hamburger-item"
+          id="portfolio-hamburger-subheader"
+        >
+          Portfolio
+        </li>
+        <div
+          class="arrowed-item-child"
+          id="portfolio-hamburger-subheader-child"
+        >
+          <li><a href="#">Hawthorn's Offical Website</a></li>
+          <li><a href="#">Kyber Corp. Website</a></li>
+        </div>
+        <li class="hamburger-item">Clients</li>
+        <li
+          class="arrowed-item hamburger-item"
+          id="news-and-events-hamburger-subheader"
+        >
+          News and Events
+        </li>
+        <div
+          class="arrowed-item-child"
+          id="news-and-events-hamburger-subheader-child"
+        >
+          <li><a href="#">News</a></li>
+          <li><a href="#">Events</a></li>
+        </div>
+        <li class="hamburger-item">Blog</li>
+      </ul>
+    </menu>
+    <main>
+      <div class="site-backdrop-green"></div>
+      <div class="site-backdrop-blue"></div>
+      <section class="homepage-section">
+        <h2>Corporate design,</h2>
+        <h2>that looks <span class="word-accent">very</span> un-corporate</h2>
+        <h3>
+          See all about our company below, including our world-class portfolio
+        </h3>
+      </section>
+      <section class="company-section">
+        <h2>Who we are</h2>
+        <h2>and what we stand for</h2>
+        <button>Learn more</button>
+      </section>
+      <section class="news-and-events-section">
+        <div class="news-and-events-section-background"></div>
+        <div class="news-card">
+          <div class="text-container">
+            <h2>Launch of our newest website - Kyber Corp!</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+              optio excepturi possimus animi aspernatur ducimus, iure quisquam
+              reprehenderit praesentium! Porro.
+            </p>
+            <button>See more</button>
+          </div>
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              alt="people partying with confetti"
+            />
+          </div>
+        </div>
+        <div class="news-card reverse">
+          <div class="text-container">
+            <h2>"We're a happy team at hawthorn"</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+              optio excepturi possimus animi aspernatur ducimus, iure quisquam
+              reprehenderit praesentium! Porro.
+            </p>
+            <button>See more</button>
+          </div>
+          <div class="image-container">
+            <img
+              src="https://resources.hawthornfc.com.au/photo-resources/2019/12/02/7018d537-1bb3-4090-a6e1-a645842a8808/cpawuHeu.png?width=1200&height=630"
+              alt="the hawthorn football club emblem"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
